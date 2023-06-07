@@ -1,0 +1,69 @@
+:root {
+  --bg: rgb(48, 44, 52);
+  --primary: rgb(237, 93, 121);
+  --secondary: rgb(104, 44, 56);
+  --duration: 0;
+}
+
+* {
+  margin: 0;  
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: var(--bg);
+  text-align: center;
+}
+
+.countdown * { font: 100 0.85rem poppins,helvetica,sans-serif; }
+
+.countdown-input {
+  width: 12rem;
+  border: 1px solid var(--secondary);
+  border-radius: 0.15rem;
+  color: var(--primary);
+  background-color: transparent;
+  padding: 0.75rem;
+  outline: none;
+  text-align: center; 
+}
+
+.countdown-input:focus { border-color: var(--primary); }
+
+::placeholder { color: var(--primary); }
+
+.countdown-timer, .countdown-timer-bar {
+  width: min(400px,90vw);
+  height: 0.2rem;
+  background-color: var(--secondary);
+  border-radius: 0.15rem;
+}
+
+.countdown-timer { margin: 2rem 0; }
+
+.countdown-timer-bar {
+  background-color: var(--primary);
+  transform-origin: left;
+}
+
+@keyframes countdown {
+  to {
+    transform: scaleX(0);
+  }
+}
+
+.animate { animation: countdown var(--duration) linear forwards; } 
+
+.countdown-start {
+  color: var(--bg);
+  background-color: var(--primary);
+  border: none;
+  padding: 0.65rem;
+  border-radius: 0.15rem;
+  font-weight: 400;
+  cursor: pointer;
+}
